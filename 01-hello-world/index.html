@@ -1,13 +1,54 @@
 <!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title>Hello World</title>
-        <meta name="description" content="Hello World Page" />
-        <meta name="author" content="Roque Rueda" />
-    </head>
 
-    <body>
-        <div id="root">Hello World</div>
-    </body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Hello World</title>
+    <meta name="description" content="Hello World Page" />
+    <meta name="author" content="Roque Rueda" />
+  </head>
+
+  <body>
+    <div id="root"></div>
+
+    <!-- Adding react to the page -->
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <script type="text/babel">
+      class App extends React.Component {
+        constructor(props) {
+          super();
+          this.state = { msg: '' };
+        }
+
+        onTrueClick = (event) => {
+          this.setState({ msg: 'Correct!' });
+        }
+
+        onFalseClick = (event) => { 
+          this.setState({ msg: 'Incorrect!' });
+        }
+
+        render() {
+          return (
+            <div>
+              <center>
+                <h3>Mexico means "The Navel of the Moon"?</h3>
+                <br/>
+                <button onClick={this.onTrueClick}>True</button>
+                <button onClick={this.onFalseClick}>False</button>
+                <br/>
+                {this.state.msg}
+              </center>
+            </div>
+          );
+        }
+      }
+
+      ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+
+  </body>
 </html>
