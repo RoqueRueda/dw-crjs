@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import axios from 'axios';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+
 import SearchBar from './components/SearchBar';
 import ImageList from './components/ImageList';
 import ImageDetail from './components/ImageDetail';
-import axios from 'axios';
+import reducers from './reducers';
 
 const API_KEY_FLICKR = "b5b00d16f3e70b5aa0157d79edaab8b5";
 
@@ -71,4 +75,8 @@ class App extends Component {
   }
 }
 
-ReactDOM.render(<App />, document.querySelector('#root'));
+ReactDOM.render(
+  <Provider store={createStore(reducers)}>
+    <App />
+  </Provider>, 
+  document.querySelector('#root'));
