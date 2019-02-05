@@ -1,7 +1,7 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-const ImageDetail = props => {
-  const { img } = props;
+const ImageDetail = ({ img }) => {
   return (
     <div className="ui card">
       <div className="image">
@@ -38,4 +38,8 @@ const ImageDetail = props => {
   );
 }
 
-export default ImageDetail;
+const mapStateToProps = (state) => {
+  return { img: state.selectedImage }
+}
+
+export default connect(mapStateToProps, ImageDetail);
