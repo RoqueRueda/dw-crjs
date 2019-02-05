@@ -15,7 +15,7 @@ const ImageList = props => {
   
   const rows = images.map(img => {
     return (
-      <ListItem key={img.id} img={img} onClick={props.onItemClick} />
+      <ListItem key={img.id} img={img} />
     )
   })
   return (

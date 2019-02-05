@@ -40,12 +40,6 @@ class App extends Component {
       })
   }
 
-  onImageSelected = img => {
-    this.setState({
-      selectedImage: img
-    });
-  }
-
   onSearch = searchText => {
     this.executeSearch(searchText);
   }
@@ -66,8 +60,7 @@ class App extends Component {
           </div>
           <div className="seven wide column">
             <ImageList 
-              images={this.state.images}
-              onItemClick={this.onImageSelected} />
+              images={this.state.images} />
           </div>
         </div>
       </div>
