@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 
 // Reducer
 const selectImageReducer = 
-  (selectedImage = undefined, action) => {
+  (selectedImage = null, action) => {
   if(action.type === 'SELECTED_IMAGE') {
       return action.payload;
   }

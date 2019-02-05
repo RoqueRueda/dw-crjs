@@ -5,7 +5,7 @@ const ImageDetail = ({ img }) => {
   return (
     <div className="ui card">
       <div className="image">
-        {img === undefined ? 
+        {img === null ? 
           <div className="ui placeholder">
             <div className="square image"></div>
           </div> :
@@ -13,7 +13,7 @@ const ImageDetail = ({ img }) => {
         }
       </div>
       <div className="content">
-        {img === undefined ?
+        {img === null ?
           <div className="ui placeholder">
             <div className="header">
               <div className="very short line"></div>
@@ -23,7 +23,7 @@ const ImageDetail = ({ img }) => {
           <a href="/" className="header">{img.id}</a>
         }
         <div className="meta">
-          {img === undefined ? 
+          {img === null ? 
             <div className="ui placeholder">
               <div className="very short line"></div>
             </div> :
@@ -31,7 +31,7 @@ const ImageDetail = ({ img }) => {
           }
         </div>
         <div className="description">
-          {img === undefined ? '' : img.title}
+          {img === null ? '' : img.title}
         </div>
       </div>
     </div>
@@ -42,4 +42,4 @@ const mapStateToProps = (state) => {
   return { img: state.selectedImage }
 }
 
-export default connect(mapStateToProps, ImageDetail);
+export default connect(mapStateToProps)(ImageDetail);

@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { selectImage } from '../actions';
 
 const ListItem = props => {
   const { img } = props;
@@ -15,7 +17,7 @@ const ListItem = props => {
   }
 
   return (
-    <div className="item" onClick={event => props.onClick(img)}>
+    <div className="item" onClick={event => props.selectImage(img)}>
       <img 
         className="ui avatar image" 
         alt={img.id} 
@@ -28,4 +30,8 @@ const ListItem = props => {
   );
 }
 
-export default ListItem;
+const mapStateToProps = (state) => {
+  return { }
+}
+
+export default connect(mapStateToProps, { selectImage })(ListItem);
