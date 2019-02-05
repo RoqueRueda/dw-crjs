@@ -6,7 +6,7 @@ import ApprovalCard from './components/ApprovalCard';
 
 const App = () => {
   return (
-    <div className="ui container comments">
+    <div className="ui container comments">      
       <ApprovalCard>
         Are you sure?
       </ApprovalCard>
