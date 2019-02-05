@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import SearchBar from './components/SearchBar';
 import ImageList from './components/ImageList';
+import ImageDetail from './components/ImageDetail';
 
 const App = () => {
   return (
@@ -12,7 +13,11 @@ const App = () => {
         </div>
       </div>
       <div className="row">
-        <div className="nine wide column"></div>
+        <div className="nine wide column">
+          <center>
+            <ImageDetail />
+          </center>
+        </div>
         <div className="seven wide column">
           <ImageList />
         </div>
