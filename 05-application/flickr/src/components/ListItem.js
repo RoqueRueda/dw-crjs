@@ -15,13 +15,13 @@ const ListItem = props => {
   }
 
   return (
-    <div className="item">
+    <div className="item" onClick={event => props.onClick(img)}>
       <img 
         className="ui avatar image" 
         alt={img.id} 
         src={img.url_s} />
       <div className="content">
-        <a href="/" className="header">{img.id}</a>
+        <a className="header">{img.id}</a>
         <div className="description">{img.title}</div>
       </div>
     </div>
