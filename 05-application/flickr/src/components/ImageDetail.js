@@ -22,15 +22,15 @@ const ImageDetail = props => {
           </div> :
           <a href="/" className="header">{img.id}</a>
         }
-        <div class="meta">
+        <div className="meta">
           {img === undefined ? 
             <div className="ui placeholder">
               <div className="very short line"></div>
             </div> :
-            <span class="date">{img.date}</span>
+            <span className="date">{img.date}</span>
           }
         </div>
-        <div class="description">
+        <div className="description">
           {img === undefined ? '' : img.title}
         </div>
       </div>
