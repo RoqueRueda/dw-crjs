@@ -36,12 +36,22 @@ class App extends Component {
       })
   }
 
+  onImageSelected = img => {
+    this.setState({
+      selectedImage: img
+    });
+  }
+
+  onSearch = searchText => {
+    this.executeSearch(searchText);
+  }
+
   render() {
     return (
       <div className="ui grid">
         <div className="row">
           <div className="wide column">
-            <SearchBar />
+            <SearchBar onSearch={this.onSearch} />
           </div>
         </div>
         <div className="row">
@@ -51,7 +61,9 @@ class App extends Component {
             </center>
           </div>
           <div className="seven wide column">
-            <ImageList images={this.state.images} />
+            <ImageList 
+              images={this.state.images}
+              onItemClick={this.onImageSelected} />
           </div>
         </div>
       </div>
