@@ -5,3 +5,4 @@ export const selectImage = (image) => {
     payload: image 
   };
 }
+
