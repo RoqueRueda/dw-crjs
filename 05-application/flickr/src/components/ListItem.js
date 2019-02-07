@@ -23,15 +23,11 @@ const ListItem = props => {
         alt={img.id} 
         src={img.url_s} />
       <div className="content">
-        <a className="header">{img.id}</a>
+        <h3 className="header">{img.id}</h3>
         <div className="description">{img.title}</div>
       </div>
     </div>
   );
 }
 
-const mapStateToProps = (state) => {
-  return { }
-}
-
-export default connect(mapStateToProps, { selectImage })(ListItem);
+export default connect(null, { selectImage })(ListItem);

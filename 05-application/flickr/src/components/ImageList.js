@@ -1,9 +1,10 @@
 import React from 'react';
 import ListItem from './ListItem';
+import { connect } from 'react-redux';
 
 const ImageList = props => {
   const { images } = props;
-  if (images === undefined) {
+  if (images === []) {
     return (
       <div className="ui relaxed divided selection list">
       <ListItem />
@@ -25,4 +26,10 @@ const ImageList = props => {
   );
 }
 
-export default ImageList;
+const mapStateToProps = state => {
+  return {
+    images: state.images
+  }
+}
+
+export default connect(mapStateToProps)(ImageList);
