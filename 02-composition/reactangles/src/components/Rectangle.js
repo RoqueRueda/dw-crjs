@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Rectangle = (props) => {
+const Rectangle = ({ height, width, bgImg }) => {
   return (
     <div style={{
-      height:props.height, 
-      width:props.width,
-      backgroundImage: `url(${props.bgImg})`,
+      height:height, 
+      width:width,
+      backgroundImage: `url(${bgImg})`,
       backgroundAttachment: 'fixed',
       backgroundPosition: 'center' }} />
   );
